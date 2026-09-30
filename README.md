@@ -1,6 +1,6 @@
 # Shopify Custom Pixel for GTM
 
-Use this custom pixel to load your GTM web container inside Shopify checkout and push a GA4 ecommerce dataLayer for `begin_checkout`, `add_shipping_info`, `add_payment_info` and `purchase`. Customer data (name, email, phone, billing address) is pushed alongside each event, both plain and SHA-256 hashed, for Advanced Matching and Enhanced Conversions.
+Use this custom pixel to load your GTM web container inside Shopify checkout and push a GA4 ecommerce dataLayer for `begin_checkout`, `add_shipping_info`, `add_payment_info` and `purchase`. Customer data (name, email, phone, address) is pushed alongside each event as plain values for Advanced Matching and Enhanced Conversions. The phone number is formatted to E.164 (`+31612345678`). Hashing is left to the tags that send the data, so every platform normalises the values its own way.
 
 Works with server-side tagging (Stape, TAGGRS, or a GTM Web Client custom loader) and Consent Mode v2.
 
@@ -27,6 +27,8 @@ Works with server-side tagging (Stape, TAGGRS, or a GTM Web Client custom loader
 | `GTM_container_id` | `GTM-0000000` | Your GTM web container ID. |
 
 The country code used in `item_id` is read from `localStorage.shopCountryCode` and falls back to `US`. Set that key in your theme if your store sells in multiple markets.
+
+The phone number comes from the checkout contact field, then the shipping address, then the billing address. A number without a country prefix gets the prefix of the shipping country, then the billing country, then the store country code above. Name and address fall back to the shipping address when there is no billing address.
 
 ## Events pushed to the dataLayer
 
