@@ -49,5 +49,6 @@ The pixel only initialises on `/checkouts/cn/` pages, so the rest of the storefr
 - [User ID tag template](https://github.com/lucnugteren/gtm_web_tag_template_user_id) for external ID matching in Meta.
 - [Restore GCLID tag template](https://github.com/lucnugteren/gtm_web_tag_template_restore_gclid) for Safari-stripped click IDs.
 - [Purchase Count tag template](https://github.com/lucnugteren/gtm_web_tag_template_purchase_count) for new vs. returning customers in Google Ads.
+- [Profit Calculation variable template](https://github.com/lucnugteren/gtm_server_variable_template_profit) for more accurate profit tracking in server GTM.
 
 More at [lucnugteren.com/resources](https://lucnugteren.com/resources).
